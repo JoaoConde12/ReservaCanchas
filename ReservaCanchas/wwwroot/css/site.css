@@ -20,3 +20,21 @@ html {
 body {
   margin-bottom: 60px;
 }
+.styled-select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none; /* Para ocultar el estilo predeterminado del navegador */
+    -webkit-appearance: none; /* Para navegadores basados en WebKit */
+    -moz-appearance: none; /* Para Firefox */
+}
+
+    .styled-select:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }

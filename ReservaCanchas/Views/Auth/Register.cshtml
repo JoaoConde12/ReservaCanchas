@@ -1,0 +1,39 @@
+﻿@model ReservaCanchas.Models.Usuario
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="text-center">
+    <h2>Crear una cuenta</h2>
+    @if (ViewBag.Errores != null)
+    {
+        <div style="color: red;">
+            @foreach (var error in ViewBag.Errores)
+            {
+                <p>@error</p>
+            }
+        </div>
+    }
+    <form asp-action="Register" asp-controller="Auth" method="post">
+        <label>Nombre</label> <br />
+        <input type="text" asp-for="Nombre" required /> <br /> <br />
+
+        <label>Correo</label> <br />
+        <input type="email" asp-for="Correo" required /> <br /> <br />
+
+        <label>Password</label> <br />
+        <input type="password" asp-for="Password" required /> <br /> <br />
+
+        <label for="TipoUsuario">Tipo de Usuario</label> <br />
+        <select asp-for="TipoUsuario" class="styled-select" required>
+            <option value="">Seleccione un tipo de usuario</option>
+            <option value="Super Usuario">Super Usuario</option>
+            <option value="Administrador">Administrador</option>
+            <option value="Corriente">Corriente</option>
+        </select>
+        <br /> <br />
+
+
+        <button type="submit">Registrar</button>
+    </form>
+</div>

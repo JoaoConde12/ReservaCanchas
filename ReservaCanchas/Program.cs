@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using ReservaCanchas.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<ReservaCanchasContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ReservaCanchasContext") ?? throw new InvalidOperationException("Connection string 'ReservaCanchasContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
