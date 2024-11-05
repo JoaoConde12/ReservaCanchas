@@ -36,11 +36,14 @@ namespace ReservaCanchas.Controllers
         {
             if (ModelState.IsValid)
             {
+                usuario.TipoUsuario = new List<string> { "Corriente" }; // Asigna una lista con el valor "Corriente"
                 _context.Usuario.Add(usuario);
                 _context.SaveChanges();
                 return RedirectToAction("Login");
             }
             return View(usuario);
         }
+
+
     }
 }

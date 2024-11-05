@@ -1,20 +1,36 @@
-html {
-  font-size: 14px;
+:root {
+  /* Paleta de colores */
+  --colorPrimario: #4658d6;
+  --colorSecundario: #201c1b;
+  /* --gris: #3B3B3B; */
+  --gris: #ededed;
+  --blanco: #fff;
+  --amarillo: #e28120;
+
+  /* Otros */
+  --separacion: 5rem;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
 }
 
 body {
@@ -38,3 +54,100 @@ body {
         border-color: #007bff;
         box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
     }
+
+.cbg-web {
+  background-color: var(--gris);
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Barra de navegación */
+.barra-navegacion {
+  width: 100vw;
+  height: 6rem;
+  background-color: var(--colorSecundario);
+  color: var(--blanco);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.barra-navegacion div a {
+  color: var(--blanco);
+}
+
+.barra-navegacion a {
+  font-size: 1.6rem;
+  margin-right: 1.5rem;
+  transition: color 0.3s;
+}
+
+.barra-navegacion a:hover {
+  color: var(--colorPrimario);
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-left: 1.5rem;
+}
+
+.menu li a {
+  font-size: 1.4rem;
+  color: var(--blanco);
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 4px;
+}
+
+.menu li a:hover {
+  background-color: var(--colorPrimario);
+  color: var(--blanco);
+}
+
+/* Menú de hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: var(--blanco);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: var(--colorSecundario);
+    width: 200px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .menu li {
+    margin: 1rem 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+}
