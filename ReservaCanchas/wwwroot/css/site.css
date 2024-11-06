@@ -216,45 +216,45 @@ body, html {
 
 .beneficios-cartas {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /* Distribuye las cartas de manera uniforme */
-  gap: 2rem; /* Espacio entre las cartas */
-  margin: 4rem 7rem; /* Espacio en los lados */
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2rem; 
+  margin: 4rem 7rem; 
 }
 
 .beneficios-cartas article {
-  background-color: var(--blanco); /* Fondo blanco para las tarjetas */
-  border-radius: 1rem; /* Bordes redondeados */
-  padding: 2rem; /* Espacio interno */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle efecto de profundidad */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
-  text-align: center; /* Centrar el contenido */
-  display: flex; /* Usar flexbox para alinear el contenido */
-  flex-direction: column; /* Alinear elementos verticalmente */
-  align-items: center; /* Centrar horizontalmente */
-  justify-content: center; /* Centrar verticalmente */
+  background-color: var(--blanco); 
+  border-radius: 1rem; 
+  padding: 2rem; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  text-align: center; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
   margin-top: 2rem;
 }
 
 .beneficios-cartas article:hover {
-  transform: translateY(-0.5rem); /* Efecto de elevarse al pasar el ratón */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
+  transform: translateY(-0.5rem); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
 .beneficios-cartas img {
-  width: 4rem; /* Tamaño del ícono */
+  width: 4rem; 
   height: 4rem;
-  margin-bottom: 0.5rem; /* Espacio debajo del ícono */
+  margin-bottom: 0.5rem; 
 }
 
 .beneficios-cartas h4 {
   font-size: 2rem;
-  color: var(--colorSecundario); /* Cambia a un color más oscuro para contrastar con el fondo blanco */
+  color: var(--colorSecundario); 
   margin-bottom: 1rem;
 }
 
 .beneficios-cartas p {
   font-size: 1.6rem;
-  color: #444; /* Texto de color gris oscuro para buena legibilidad */
+  color: #444; 
 }
 
 .socios-app {
@@ -301,3 +301,47 @@ body, html {
   margin-bottom: 2rem;
 }
 
+/* Complejos */
+.complejos-index {
+  padding: 3rem 7rem;
+  color: var(--blanco);
+}
+
+.complejos-index h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 3.5rem;
+  margin-bottom: 6rem;
+}
+
+.complejos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.complejo-card {
+  background-color: var(--colorSecundario);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.complejo-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.complejo-card img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.complejo-card h4 {
+  font-size: 2.5rem;
+  color: var(--blanco);
+  padding: 0.1rem 0;
+}

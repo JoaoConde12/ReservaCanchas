@@ -19,7 +19,7 @@
                 <li><a href="@Url.Action("Index", "Home")">Inicio</a></li>
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <li><a href="@Url.Action("Inicio2", "Home")">Inicio 2</a></li>
+                    <li><a href="@Url.Action("Index", "Complejoes")">Complejos</a></li>
                     <li><a href="@Url.Action("Logout", "Auth")">Cerrar Sesión</a></li>
                 }
                 else

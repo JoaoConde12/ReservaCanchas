@@ -15,5 +15,6 @@ namespace ReservaCanchas.Data
         }
 
         public DbSet<ReservaCanchas.Models.Usuario> Usuario { get; set; } = default!;
+        public DbSet<ReservaCanchas.Models.Complejo> Complejo { get; set; } = default!;
     }
 }
