@@ -12,15 +12,6 @@
 
     <div class="registro-form">
         <h3>Crear una cuenta</h3>
-        @if (ViewBag.Errores != null)
-        {
-            <div class="error-message">
-                @foreach (var error in ViewBag.Errores)
-                {
-                    <p>@error</p>
-                }
-            </div>
-        }
         <form asp-action="Register" asp-controller="Auth" method="post">
             <label>Nombre de usuario</label>
             <input type="text" asp-for="Nombre" required />
@@ -33,6 +24,11 @@
 
             <button type="submit">Registrar</button>
         </form>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="error-message">@ViewBag.Error</div>
+        }
 
         <p>¿Ya tienes una cuenta?<a asp-action="Login" asp-controller="Auth">Inicia sesión aquí</a></p>
     </div>

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ReservaCanchas.Models;
 using System.Diagnostics;
@@ -14,6 +15,12 @@ namespace ReservaCanchas.Controllers
         }
 
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult Inicio2()
         {
             return View();
         }
