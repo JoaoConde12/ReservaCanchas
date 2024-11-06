@@ -3,27 +3,37 @@
     ViewData["Title"] = "Register";
 }
 
-<div class="text-center">
-    <h2>Crear una cuenta</h2>
-    @if (ViewBag.Errores != null)
-    {
-        <div style="color: red;">
-            @foreach (var error in ViewBag.Errores)
-            {
-                <p>@error</p>
-            }
-        </div>
-    }
-    <form asp-action="Register" asp-controller="Auth" method="post">
-        <label>Nombre</label> <br />
-        <input type="text" asp-for="Nombre" required /> <br /> <br />
+<div class="register-container">
+    <div class="register-info">
+        <h2>Únete a Reserva Tu Cancha</h2>
+        <p>¡Crea tu cuenta para empezar a disfrutar y reservar canchas fácilmente!</p>
+        <img src="~/img/copa-login.png" alt="Copa" class="logo-copa"/>
+    </div>
 
-        <label>Correo</label> <br />
-        <input type="email" asp-for="Correo" required /> <br /> <br />
+    <div class="register-form">
+        <h3>Crear una cuenta</h3>
+        @if (ViewBag.Errores != null)
+        {
+            <div class="error-message">
+                @foreach (var error in ViewBag.Errores)
+                {
+                    <p>@error</p>
+                }
+            </div>
+        }
+        <form asp-action="Register" asp-controller="Auth" method="post">
+            <label>Nombre de usuario</label>
+            <input type="text" asp-for="Nombre" required />
 
-        <label>Password</label> <br />
-        <input type="password" asp-for="Password" required /> <br /> <br />
+            <label>Correo electrónico</label>
+            <input type="email" asp-for="Correo" required />
 
-        <button type="submit">Registrar</button>
-    </form>
+            <label>Contraseña</label>
+            <input type="password" asp-for="Password" required />
+
+            <button type="submit">Registrar</button>
+        </form>
+
+        <p>¿Ya tienes una cuenta?<a asp-action="Login" asp-controller="Auth">Inicia sesión aquí</a></p>
+    </div>
 </div>

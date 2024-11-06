@@ -2,21 +2,30 @@
     ViewData["Title"] = "Login";
 }
 
-<div class="text-center">
-    <form asp-action="Login" asp-controller="Auth" method="post">
-        <label>Correo de usuario</label> <br />
-        <input type="email" name="correo" required /> <br /> <br />
+<div class="login-container">
+    <div class="login-info">
+        <h2>Bienvenido a Reserva Tu Cancha</h2>
+        <p>¡Inicia sesión para acceder a todas las funciones y poder reservar una cancha!</p>
+        <img src="~/img/copa-login.png" alt="Copa" class="logo-copa"/>
+    </div>
 
-        <label>Password</label> <br />
-        <input type="password" name="password" required /> <br /> <br />
+    <div class="login-form">
+        <h3>Iniciar sesión</h3>
+        <form asp-action="Login" asp-controller="Auth" method="post">
+            <label>Correo electrónico</label>
+            <input type="email" name="correo" required /> 
 
-        <button type="submit">Iniciar sesión</button>
-    </form>
+            <label>Contraseña</label> 
+            <input type="password" name="password" required />
 
-    @if (ViewBag.Error != null)
-    {
-        <div style="color: red;">@ViewBag.Error</div>
-    }
+            <button type="submit">Iniciar sesión</button>
+        </form>
 
-    <p>¿No tienes cuenta? <a asp-action="Register" asp-controller="Auth">Regístrate aquí</a></p>
+        @if (ViewBag.Error != null)
+        {
+            <div class="error-message">@ViewBag.Error</div>
+        }
+
+        <p>¿No tienes una cuenta? <a asp-action="Register" asp-controller="Auth">  Crea una aquí</a></p>
+    </div>
 </div>
